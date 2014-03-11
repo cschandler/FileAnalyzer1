@@ -1,0 +1,6 @@
+Application: FileAnalyzer
+Author: Charles Chandler, Th 5:30
+email: CChandler2@madisoncollege.edu
+Input file: /Users/CChandler/gitRepositories/LifeCounter/README.md
+Analyzed on: Mon Mar 10 23:59:02 CDT 2014
+Total token count: 32

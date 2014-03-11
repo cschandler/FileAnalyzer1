@@ -1,0 +1,84 @@
+package java112.analyzer;
+
+import java.util.*;
+import java.io.*;
+
+/**
+ * Reports a summary of the analyzation of the input text file.
+ *
+ * @author Charles Chandler
+ * class SummaryReport
+ *
+ */
+public class SummaryReport implements Analyzer {
+
+    private int totalTokensCount;
+
+    /**
+     * Returns totalTokensCount instance variable.
+     *
+     * @return The current count of total tokens from the text file.
+     */
+    public int getTotalTokensCount() {
+        return totalTokensCount;
+    }
+
+    /**
+     * Increments the totalTokensCount instance variable.
+     *
+     * @param token A single token from the input file.
+     */
+    public void processToken(String token) {
+        totalTokensCount++;
+    }
+
+    /**
+     * Uses PrintWriter to output the summary report. Calls outputSummaryReport
+     * method for specific format.
+     *
+     * @param inputFilePath The input file path originally provided by the user.
+     * @param outputFilePath The destination path for the output text file.
+     */
+    public void writeOutputFile(String inputFilePath, String outputFilePath) {
+
+        PrintWriter out = null;
+
+        try {
+            out = new PrintWriter(new BufferedWriter(
+                    new FileWriter(outputFilePath)));
+
+            outputSummaryReport(out, inputFilePath, outputFilePath);
+
+        } catch (IOException ioexception) {
+            ioexception.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
+    }
+
+    /**
+     * Determines the specific format for the summary report.
+     *
+     * @param out The PrintWriter instantiated in writeOutputFile.
+     * @param inputFilePath The input file path originally provided by the user.
+     * @param outputFilePath The destination path for the output text file.
+     */
+    private void outputSummaryReport(PrintWriter out, String inputFilePath,
+            String outputFilePath) {
+
+        Date date = new Date();
+
+        out.println("Application: FileAnalyzer");
+        out.println("Author: Charles Chandler, Th 5:30");
+        out.println("email: CChandler2@madisoncollege.edu");
+        out.println("Input file: " + inputFilePath);
+        out.println("Analyzed on: " + date);
+        out.println("Total token count: " + totalTokensCount);
+
+        System.out.println("Summary Report output to " + outputFilePath + ".");
+    }
+}

@@ -1,0 +1,17 @@
+package java112.analyzer;
+
+/**
+ * @author Charles Chandler
+ * class AnalyzerDriver
+ * TODO: comment
+ */
+public class AnalyzerDriver {
+
+    public static void main(String[] arguments) {
+
+        System.out.println("Start of main in AnalyzerDriver.");
+        AnalyzeFile analyzer = new AnalyzeFile();
+        analyzer.runAnalysis(arguments);
+    }
+
+}

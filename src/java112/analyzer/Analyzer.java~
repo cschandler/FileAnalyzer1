@@ -1,0 +1,13 @@
+package java112.analyzer;
+
+/**
+ * @author Charles Chandler
+ * class name
+ * TODO: comment
+ */
+public interface Analyzer {
+
+    void processToken(String token);
+
+    void writeOutputFile(String inputFilePath, String outputFilePath);
+}
