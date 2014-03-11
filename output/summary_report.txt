@@ -1,0 +1,6 @@
+Application: FileAnalyzer
+Author: Charles Chandler, Th 5:30
+email: CChandler2@madisoncollege.edu
+Input file: build.xml
+Analyzed on: Tue Mar 11 18:51:14 CDT 2014
+Total token count: 952
